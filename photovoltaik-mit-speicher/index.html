@@ -295,7 +295,7 @@ td{color:#4b5f75}
 .photo-card .caption{padding:14px 18px;color:var(--m);font-size:13.5px}
 .dark .photo-card{border-color:rgba(255,255,255,.14)}
 .wide-photo{margin-top:34px}
-.ansprech-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.ansprech-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .card.has-img{padding-top:0;overflow:hidden}
 .card-img{margin:0 -26px 18px;height:140px;overflow:hidden}
 .card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease}
@@ -334,6 +334,18 @@ td{color:#4b5f75}
 @media(max-width:520px){
   .steps{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr}
+}
+
+/* ===== Mobile: Tabellen gestapelt statt scrollen ===== */
+@media(max-width:640px){
+  .table-scroll table{min-width:0;width:100%}
+  .table-scroll thead{display:none}
+  .table-scroll tbody tr{display:block;padding:0 0 6px}
+  .table-scroll tbody td{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 14px;padding:9px 20px;border-bottom:1px solid var(--l);text-align:right}
+  .table-scroll tbody td.price{white-space:normal}
+  .table-scroll tbody td:first-child{display:block;text-align:left;background:var(--s);font-weight:700;padding:11px 20px;border-bottom:1px solid var(--l)}
+  .table-scroll tbody td:before{content:attr(data-label);font-weight:700;color:var(--m);font-size:11px;letter-spacing:.06em;text-transform:uppercase;text-align:left;flex-shrink:0}
+  .table-scroll tbody td:first-child:before{content:none}
 }
 </style>
 </head>
@@ -466,7 +478,7 @@ td{color:#4b5f75}
         <div class="card-img"><img src="../bilder/team-einsatz.jpg" alt="Das Team von S&P Solar" loading="lazy" width="1200" height="668" style="object-position:50% 30%"></div>
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#172033" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div>
         <h3>Persönlicher Ansprechpartner</h3>
-        <p>Ein direkter Draht statt Hotline: Eduard Schartner begleitet Ihr Projekt von der Anfrage bis zur Inbetriebnahme – und auch danach.</p>
+        <p>Ein direkter Draht statt Hotline: Das Team um Eduard Schartner begleitet Ihr Projekt von der Anfrage bis zur Inbetriebnahme – und auch danach.</p>
       </article>
     </div>
   </div>
@@ -485,9 +497,9 @@ td{color:#4b5f75}
             <tr><th scope="col">Haushalt</th><th scope="col">Anlagengröße</th><th scope="col">Speicher</th><th scope="col">Richtwert schlüsselfertig*</th></tr>
           </thead>
           <tbody>
-            <tr><td><b>2–3 Personen</b><br>ca. 3.500 kWh/Jahr</td><td>ca. 6 kWp</td><td>ca. 5 kWh</td><td class="price">ca. 12.000–16.000 €</td></tr>
-            <tr><td><b>4–5 Personen</b><br>ca. 4.500–5.500 kWh/Jahr</td><td>ca. 8–10 kWp</td><td>ca. 8–10 kWh</td><td class="price">ca. 17.000–22.000 €</td></tr>
-            <tr><td><b>Großer Haushalt / E-Auto</b><br>ab 6.000 kWh/Jahr</td><td>ca. 12–15 kWp</td><td>ca. 12–15 kWh</td><td class="price">ca. 24.000–30.000 €</td></tr>
+            <tr><td data-label="Haushalt"><b>2–3 Personen</b><br>ca. 3.500 kWh/Jahr</td><td data-label="Anlagengröße">ca. 6 kWp</td><td data-label="Speicher">ca. 5 kWh</td><td class="price" data-label="Richtwert schlüsselfertig*">ca. 12.000–16.000 €</td></tr>
+            <tr><td data-label="Haushalt"><b>4–5 Personen</b><br>ca. 4.500–5.500 kWh/Jahr</td><td data-label="Anlagengröße">ca. 8–10 kWp</td><td data-label="Speicher">ca. 8–10 kWh</td><td class="price" data-label="Richtwert schlüsselfertig*">ca. 17.000–22.000 €</td></tr>
+            <tr><td data-label="Haushalt"><b>Großer Haushalt / E-Auto</b><br>ab 6.000 kWh/Jahr</td><td data-label="Anlagengröße">ca. 12–15 kWp</td><td data-label="Speicher">ca. 12–15 kWh</td><td class="price" data-label="Richtwert schlüsselfertig*">ca. 24.000–30.000 €</td></tr>
           </tbody>
         </table>
       </div>

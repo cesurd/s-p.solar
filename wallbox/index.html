@@ -297,7 +297,7 @@ td{color:#4b5f75}
 .photo-card .caption{padding:14px 18px;color:var(--m);font-size:13.5px}
 .dark .photo-card{border-color:rgba(255,255,255,.14)}
 .wide-photo{margin-top:34px}
-.ansprech-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.ansprech-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .card.has-img{padding-top:0;overflow:hidden}
 .card-img{margin:0 -26px 18px;height:140px;overflow:hidden}
 .card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease}
@@ -336,6 +336,18 @@ td{color:#4b5f75}
 @media(max-width:520px){
   .steps{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr}
+}
+
+/* ===== Mobile: Tabellen gestapelt statt scrollen ===== */
+@media(max-width:640px){
+  .table-scroll table{min-width:0;width:100%}
+  .table-scroll thead{display:none}
+  .table-scroll tbody tr{display:block;padding:0 0 6px}
+  .table-scroll tbody td{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 14px;padding:9px 20px;border-bottom:1px solid var(--l);text-align:right}
+  .table-scroll tbody td.price{white-space:normal}
+  .table-scroll tbody td:first-child{display:block;text-align:left;background:var(--s);font-weight:700;padding:11px 20px;border-bottom:1px solid var(--l)}
+  .table-scroll tbody td:before{content:attr(data-label);font-weight:700;color:var(--m);font-size:11px;letter-spacing:.06em;text-transform:uppercase;text-align:left;flex-shrink:0}
+  .table-scroll tbody td:first-child:before{content:none}
 }
 </style>
 </head>
@@ -478,10 +490,10 @@ td{color:#4b5f75}
             <tr><th scope="col">Im Vergleich</th><th scope="col">Wallbox 11 kW</th><th scope="col">Wallbox 22 kW</th></tr>
           </thead>
           <tbody>
-            <tr><td><b>Ladeleistung</b></td><td>11 kW (dreiphasig)</td><td>22 kW (dreiphasig)</td></tr>
-            <tr><td><b>Reichweite pro Ladestunde*</b></td><td>ca. 50–70 km</td><td>ca. 100–140 km – wenn das Fahrzeug es kann</td></tr>
-            <tr><td><b>Netzbetreiber</b></td><td>meldepflichtig – erledigen wir</td><td>genehmigungspflichtig (§ 19 NAV) – beantragen wir</td></tr>
-            <tr><td><b>Für wen geeignet</b></td><td><b>Der Alltags-Standard:</b> über Nacht ist jedes E-Auto voll</td><td>Sonderfälle: mehrere Fahrzeuge, kurze Standzeiten</td></tr>
+            <tr><td data-label="Im Vergleich"><b>Ladeleistung</b></td><td data-label="Wallbox 11 kW">11 kW (dreiphasig)</td><td data-label="Wallbox 22 kW">22 kW (dreiphasig)</td></tr>
+            <tr><td data-label="Im Vergleich"><b>Reichweite pro Ladestunde*</b></td><td data-label="Wallbox 11 kW">ca. 50–70 km</td><td data-label="Wallbox 22 kW">ca. 100–140 km – wenn das Fahrzeug es kann</td></tr>
+            <tr><td data-label="Im Vergleich"><b>Netzbetreiber</b></td><td data-label="Wallbox 11 kW">meldepflichtig – erledigen wir</td><td data-label="Wallbox 22 kW">genehmigungspflichtig (§ 19 NAV) – beantragen wir</td></tr>
+            <tr><td data-label="Im Vergleich"><b>Für wen geeignet</b></td><td data-label="Wallbox 11 kW"><b>Der Alltags-Standard:</b> über Nacht ist jedes E-Auto voll</td><td data-label="Wallbox 22 kW">Sonderfälle: mehrere Fahrzeuge, kurze Standzeiten</td></tr>
           </tbody>
         </table>
       </div>
@@ -503,9 +515,9 @@ td{color:#4b5f75}
             <tr><th scope="col">Position</th><th scope="col">Was ist enthalten</th><th scope="col">Richtwert*</th></tr>
           </thead>
           <tbody>
-            <tr><td><b>Wallbox-Gerät (11 kW)</b></td><td>Ladestation je nach Ausstattung, z. B. mit Anbindung ans Energiemanagement</td><td class="price">ca. 400–1.200 €</td></tr>
-            <tr><td><b>Installation & Material</b></td><td>Eigener Stromkreis, Absicherung, FI-Schutz, Leitungsweg, Inbetriebnahme – je nach Leitungsweg & Zählerschrank</td><td class="price">ca. 800–2.000 €</td></tr>
-            <tr><td><b>Gesamt typisch</b></td><td>Komplett montiert, geprüft und beim Netzbetreiber angemeldet</td><td class="price">ca. 1.500–3.000 €</td></tr>
+            <tr><td data-label="Position"><b>Wallbox-Gerät (11 kW)</b></td><td data-label="Was ist enthalten">Ladestation je nach Ausstattung, z. B. mit Anbindung ans Energiemanagement</td><td class="price" data-label="Richtwert*">ca. 400–1.200 €</td></tr>
+            <tr><td data-label="Position"><b>Installation & Material</b></td><td data-label="Was ist enthalten">Eigener Stromkreis, Absicherung, FI-Schutz, Leitungsweg, Inbetriebnahme – je nach Leitungsweg & Zählerschrank</td><td class="price" data-label="Richtwert*">ca. 800–2.000 €</td></tr>
+            <tr><td data-label="Position"><b>Gesamt typisch</b></td><td data-label="Was ist enthalten">Komplett montiert, geprüft und beim Netzbetreiber angemeldet</td><td class="price" data-label="Richtwert*">ca. 1.500–3.000 €</td></tr>
           </tbody>
         </table>
       </div>
