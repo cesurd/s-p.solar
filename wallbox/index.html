@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<!--
+  S&P SOLAR – UNTERSEITE 3/4: Wallbox-Installation
+  Erstellt von Rex Fortis · 12.08.2026
+
+  GO-LIVE-CHECKLISTE (vor Deploy abarbeiten):
+  [ ] Kosten-Richtwerte mit Eduard/Artur Schartner abstimmen
+      (Gerät 400–1.200 €, Installation 800–2.000 €, gesamt 1.500–3.000 €)
+  [ ] Ladezeit-Beispiel (60-kWh-Batterie) und "rund 5× schneller" freigeben
+  [ ] § 19 NAV: Meldepflicht 11 kW / Genehmigungspflicht 22 kW auf aktuellen Stand prüfen
+  [ ] Förderlage prüfen: bundesweite KfW-Programme ausgelaufen (Stand 2026) –
+      gibt es aktuell regionale Programme in Mittelbaden?
+  [ ] Klären: Welche Wallbox-Hersteller verbaut S&P bevorzugt? Ggf. namentlich ergänzen
+  [ ] Kostenlos-Zusagen (Beratung + Vor-Ort-Check) mit Eduard/Artur Schartner bestätigen –
+      bei Nichtbestätigung "kostenlos" streichen bzw. durch "unverbindlich" ersetzen
+      (betrifft Text, FAQ/JSON-LD sowie mailto-/WhatsApp-Vorlagen)
+  [ ] favicon.png (Original-Logo, 192px) liegt im Projekt-Root – mit auf den Server laden;
+      Homepage-<head> ebenfalls auf favicon.png umstellen (hat aktuell gar kein Favicon)
+  [ ] og:image zeigt auf /bilder/elektrik-zaehlerschrank.jpg – optional später 1200x630-Crop erstellen
+  [ ] Homepage-Navigation & Leistungs-Karten um Links auf die 4 Unterseiten ergänzen
+      (wichtig für interne Verlinkung & Indexierung!)
+  [ ] bilder/-Ordner KOMPLETT (Fotos + logo.png, aus Homepage extrahiert & komprimiert) mit auf den Server hochladen
+  [ ] robots.txt, sitemap.xml, llms.txt aus Projektordner mit hochladen
+  [ ] Google Search Console: Sitemap einreichen, 4 URLs zur Indexierung anstoßen
+  [ ] GBP: Unterseiten als Leistungs-Links hinterlegen
+-->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wallbox-Installation: Kosten & PV-Laden | S&P Solar</title>
+<meta name="description" content="Wallbox-Installation in Baden-Baden, Rastatt & Bühl: 11-kW-Wallbox fachgerecht montiert, Anmeldung inklusive, auf Wunsch mit PV-Überschussladen. Jetzt anfragen.">
+<link rel="canonical" href="https://www.s-p.solar/wallbox/">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#071421">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="S&P Solar">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Wallbox-Installation: Kosten & PV-Laden | S&P Solar">
+<meta property="og:description" content="11-kW-Wallbox fachgerecht installiert in Baden-Baden, Rastatt & Bühl – inklusive Netzbetreiber-Anmeldung, auf Wunsch mit PV-Überschussladen.">
+<meta property="og:url" content="https://www.s-p.solar/wallbox/">
+<meta property="og:image" content="https://www.s-p.solar/bilder/elektrik-zaehlerschrank.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../favicon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HomeAndConstructionBusiness",
+      "@id": "https://www.s-p.solar/#business",
+      "name": "S&P Solar",
+      "url": "https://www.s-p.solar/",
+      "telephone": "+491738187065",
+      "email": "info@s-p.solar",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gernsbacherstraße 30",
+        "postalCode": "76530",
+        "addressLocality": "Baden-Baden",
+        "addressCountry": "DE"
+      },
+      "areaServed": ["Baden-Baden", "Rastatt", "Bühl", "Gaggenau", "Gernsbach", "Offenburg"],
+      "knowsAbout": ["Photovoltaik", "Stromspeicher", "Wallbox", "Balkonkraftwerke", "Batterieerweiterung"]
+    },
+    {
+      "@type": "Service",
+      "name": "Wallbox-Installation",
+      "serviceType": "Installation von Wallboxen und Ladestationen für Elektroautos",
+      "provider": { "@id": "https://www.s-p.solar/#business" },
+      "areaServed": ["Baden-Baden", "Rastatt", "Bühl", "Gaggenau", "Gernsbach", "Offenburg"],
+      "url": "https://www.s-p.solar/wallbox/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.s-p.solar/" },
+        { "@type": "ListItem", "position": 2, "name": "Wallbox-Installation", "item": "https://www.s-p.solar/wallbox/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was kostet die Wallbox-Installation?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Als Richtwert (Stand 2026, inkl. MwSt.): Das 11-kW-Wallbox-Gerät kostet ca. 400–1.200 €, die Installation inklusive Material je nach Leitungsweg und Zählerschrank ca. 800–2.000 €. Komplett liegen die meisten Projekte bei ca. 1.500–3.000 € inklusive Anmeldung beim Netzbetreiber. Den verbindlichen Preis nennen wir Ihnen nach dem kostenlosen Vor-Ort-Check." }
+        },
+        {
+          "@type": "Question",
+          "name": "11 oder 22 kW – was ist sinnvoll?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Für Zuhause sind 11 kW fast immer die richtige Wahl: Über Nacht ist jedes E-Auto voll, die Wallbox ist nur meldepflichtig und viele Fahrzeuge laden an Wechselstrom ohnehin nicht schneller. 22 kW lohnen sich nur in Sonderfällen – etwa wenn mehrere Fahrzeuge in kurzer Zeit laden müssen – und brauchen eine Genehmigung des Netzbetreibers." }
+        },
+        {
+          "@type": "Question",
+          "name": "Muss die Wallbox angemeldet werden?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja. Eine 11-kW-Wallbox muss beim Netzbetreiber angemeldet werden, eine 22-kW-Wallbox braucht sogar eine Genehmigung (§ 19 NAV). Beides übernehmen wir für Sie – die Anmeldung gehört bei uns zum Installationspaket." }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich mit meinem PV-Strom laden?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja. Mit PV-Überschussladen lädt die Wallbox bevorzugt dann, wenn Ihre Photovoltaikanlage mehr Strom erzeugt, als das Haus gerade verbraucht. Dafür koppeln wir Wallbox und PV-Anlage über ein Energiemanagement – am besten in Kombination mit einem Stromspeicher. So fahren Sie einen großen Teil Ihrer Kilometer mit eigenem Sonnenstrom." }
+        },
+        {
+          "@type": "Question",
+          "name": "Gibt es Förderung für die Wallbox?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Die bundesweiten KfW-Programme für private Wallboxen sind ausgelaufen (Stand 2026). Ob es aktuell regionale Programme oder Zuschüsse gibt, prüfen wir gerne im Rahmen Ihres Projekts – sprechen Sie uns in der Beratung einfach darauf an." }
+        },
+        {
+          "@type": "Question",
+          "name": "Funktioniert eine Wallbox auch ohne PV-Anlage?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja, selbstverständlich. Die Wallbox lädt dann mit Netzstrom – deutlich schneller und sicherer als jede Haushaltssteckdose. Eine PV-Anlage lässt sich später jederzeit ergänzen; die Wallbox binden wir dann ins Energiemanagement ein." }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie lange dauert die Installation?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In den meisten Fällen ist die Wallbox an einem halben bis ganzen Tag installiert – inklusive eigenem Stromkreis und Absicherung. Bei längeren Leitungswegen oder wenn der Zählerschrank angepasst werden muss, kann es etwas mehr sein. Nach dem Vor-Ort-Check nennen wir Ihnen den konkreten Aufwand." }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Wallbox bekomme ich?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Wir sind markenoffen und wählen das Gerät passend zu Ihrem Fahrzeug, Ihrer Elektroinstallation und – falls vorhanden oder geplant – Ihrem PV-System aus. Wichtig ist, dass Wallbox, Energiemanagement und Speicher sauber zusammenspielen. Sie bekommen eine Empfehlung mit Begründung, keine Katalogseite." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--d:#071421;--g:#f2c14e;--gd:#c89521;--t:#142032;--m:#64748b;--l:#e7edf4;--s:#f6f8fb;--r:22px;--ok:#22c55e}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--t);line-height:1.55;background:#fff}
+a{text-decoration:none;color:inherit}
+img,svg{max-width:100%;display:block}
+::selection{background:var(--g);color:#172033}
+:focus-visible{outline:3px solid var(--gd);outline-offset:2px;border-radius:4px}
+.wrap{width:min(1180px,92%);margin:auto}
+
+/* ===== Header ===== */
+.top{position:sticky;top:0;z-index:20;background:rgba(7,20,33,.96);border-bottom:1px solid rgba(255,255,255,.1);backdrop-filter:blur(8px)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;font-size:20px;letter-spacing:.5px}
+.brand-mark{width:46px;height:46px;flex-shrink:0}
+.links{display:flex;align-items:center;gap:18px;color:#dbe7f3;font-size:14px}
+.links>a:not(.btn){padding:6px 2px;border-bottom:2px solid transparent}
+.links>a:not(.btn):hover{color:#fff;border-bottom-color:var(--g)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:13px;padding:13px 18px;font-weight:900;border:0;cursor:pointer;font-size:15px;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.gold{background:linear-gradient(135deg,var(--g),#ffdb74);color:#172033;box-shadow:0 8px 20px rgba(242,193,78,.25)}
+.ghost{border:1px solid rgba(255,255,255,.35);color:#fff}
+.darkbtn{background:var(--d);color:#fff}
+
+/* ===== Hero ===== */
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(1100px 520px at 85% -10%,rgba(242,193,78,.14),transparent 60%),linear-gradient(90deg,rgba(7,20,33,.97),rgba(7,20,33,.86) 45%,rgba(9,24,39,.62)),url('../bilder/hero-dach.jpg') center/cover;background-color:var(--d)}
+.hero:before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(720px 460px at 30% 20%,#000,transparent)}
+.hero .wrap{position:relative;padding:64px 0 72px}
+.crumbs{font-size:13px;color:#9fb2c5;margin-bottom:22px}
+.crumbs a:hover{color:var(--g)}
+.crumbs span{color:#dbe7f3}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center}
+.pill{display:inline-block;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.1);padding:9px 12px;border-radius:999px;font-size:13px;font-weight:900}
+.pill b{color:var(--g)}
+h1{font-size:clamp(30px,3.9vw,44px);line-height:1.1;margin:20px 0 18px;letter-spacing:-1px;text-wrap:balance}
+h1 span{color:var(--g)}
+.lead{font-size:clamp(17px,2vw,20px);max-width:640px;color:#eef6ff}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700;color:#dbe7f3}
+.chip b{color:var(--g)}
+.hero-panel{position:relative;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.14);border-radius:26px;padding:26px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.hero-panel figcaption{margin-top:14px;font-size:13px;color:#9fb2c5;text-align:center}
+.panel-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.panel-stat{background:rgba(7,20,33,.55);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 14px;font-size:13px;color:#cbd5e1}
+.panel-stat b{display:block;font-size:19px;color:var(--g)}
+
+/* ===== Sections ===== */
+.section{padding:84px 0}
+.soft{background:var(--s)}
+.dark{background:radial-gradient(circle at top left,#142b40,var(--d));color:#fff}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.eyebrow{font-size:13px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:var(--gd);margin-bottom:12px}
+.dark .eyebrow{color:var(--g)}
+h2{font-size:clamp(28px,3.6vw,44px);line-height:1.1;margin:0 0 18px;letter-spacing:-1px}
+h3{letter-spacing:-.2px}
+.section p{color:#4b5f75}
+.dark p{color:#d6e3ef}
+.check{list-style:none;padding:0}
+.check li{margin:10px 0;padding-left:28px;position:relative}
+.check li:before{content:'✓';position:absolute;left:0;color:var(--gd);font-weight:900}
+.dark .check li:before{color:var(--g)}
+
+/* ===== Cards ===== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--l);border-radius:var(--r);padding:26px;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(7,20,33,.09)}
+.card h3{margin:0 0 8px}
+.card .icon{width:46px;height:46px;border-radius:13px;background:linear-gradient(135deg,var(--g),#ffdb74);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.card .icon svg{width:24px;height:24px}
+
+/* ===== Eigenverbrauchs-Visual ===== */
+.usage{background:#fff;border:1px solid var(--l);border-radius:var(--r);padding:28px}
+.usage h3{margin:0 0 4px}
+.usage small{color:var(--m)}
+.usage-row{margin-top:20px}
+.usage-row .label{display:flex;justify-content:space-between;font-size:14px;font-weight:700;margin-bottom:7px}
+.usage-row .label b{color:var(--gd)}
+.bar{height:16px;border-radius:999px;background:var(--l);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--gd),var(--g))}
+.usage-note{margin-top:18px;font-size:13px;color:var(--m)}
+
+/* ===== Kosten-Tabelle ===== */
+.table-card{background:#fff;border:1px solid var(--l);border-radius:var(--r);overflow:hidden}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{text-align:left;padding:16px 20px;border-bottom:1px solid var(--l);font-size:15px}
+th{background:var(--d);color:#fff;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+tr:last-child td{border-bottom:0}
+td b{color:var(--t)}
+td{color:#4b5f75}
+.price{font-weight:900;color:var(--t);white-space:nowrap}
+.table-foot{padding:16px 20px;font-size:13px;color:var(--m);border-top:1px solid var(--l);background:var(--s)}
+.notice{display:flex;gap:14px;align-items:flex-start;background:#fffaf0;border:1px solid #f4dfae;border-radius:18px;padding:18px 20px;margin-top:22px}
+.notice .n-icon{flex-shrink:0;width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--g),#ffdb74);display:flex;align-items:center;justify-content:center;font-weight:900;color:#172033}
+.notice p{margin:0;font-size:14.5px;color:#5b4a1e}
+.notice b{color:#3d3010}
+
+/* ===== Stats ===== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat{background:#fff;border:1px solid var(--l);border-radius:var(--r);text-align:center;padding:28px}
+.stat b{font-size:29px;letter-spacing:-.5px}
+.stat small{display:block;margin-top:6px;color:var(--m)}
+
+/* ===== Steps ===== */
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.step{border:1px solid rgba(255,255,255,.13);border-radius:18px;padding:18px;background:rgba(255,255,255,.06)}
+.step b{display:inline-flex;width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;background:var(--g);color:#172033}
+.step h3{margin:12px 0 6px;font-size:17px}
+.step p{margin:0;font-size:14px}
+
+/* ===== Logos / Marken ===== */
+.logos{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.logo-box{border:1px solid var(--l);border-radius:18px;padding:20px;text-align:center;font-weight:900;background:#fff}
+.logo-slider{overflow:hidden;margin-top:30px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.logo-track{display:flex;width:max-content;animation:logo-slide 28s linear infinite}
+.logo-slider:hover .logo-track{animation-play-state:paused}
+.logo-track .logo-box{flex:0 0 auto;min-width:180px;margin-right:14px;padding:20px 34px}
+@keyframes logo-slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.logo-track{animation:none;flex-wrap:wrap;width:auto}.logo-slider{-webkit-mask-image:none;mask-image:none}}
+
+/* ===== Region ===== */
+.region-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.region-chip{border:1px solid var(--l);background:#fff;border-radius:999px;padding:10px 18px;font-weight:700;font-size:14px;color:var(--t)}
+.region-chip:before{content:'📍 ';font-size:12px}
+
+/* ===== FAQ ===== */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.faq details{background:#fff;border:1px solid var(--l);border-radius:var(--r);padding:20px 22px}
+.faq summary{font-weight:900;cursor:pointer;list-style:none;position:relative;padding-right:34px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:'+';position:absolute;right:0;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--s);border:1px solid var(--l);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--gd);transition:transform .2s ease}
+.faq details[open] summary:after{content:'–';transform:translateY(-50%) rotate(180deg)}
+.faq details p{margin:14px 0 0}
+
+/* ===== CTA ===== */
+.cta{background:radial-gradient(900px 400px at 90% 0%,rgba(242,193,78,.16),transparent 55%),linear-gradient(135deg,rgba(7,20,33,.96),rgba(12,29,45,.88)),url('../bilder/cta-hintergrund.jpg') center/cover;color:#fff;border-radius:30px;padding:54px;position:relative;overflow:hidden}
+.cta p{color:#d6e3ef}
+
+/* ===== Weitere Leistungen ===== */
+.more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.more{background:#fff;border:1px solid var(--l);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:10px;transition:transform .18s ease,box-shadow .18s ease}
+.more:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(7,20,33,.09)}
+.more h3{margin:0}
+.more p{margin:0;font-size:14.5px}
+.more .arrow{margin-top:auto;font-weight:900;color:var(--gd)}
+
+/* ===== Footer ===== */
+.footer{background:#06101b;color:#cbd5e1;padding:38px 0}
+.footgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+.footer b{color:#fff}
+.footer a:hover{color:var(--g)}
+.credit{border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding-top:18px;font-size:13px;color:#8aa0b5;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.credit a{color:#cbd5e1;text-decoration:underline}
+
+/* ===== Sticky WhatsApp + Cookie ===== */
+.sticky{position:fixed;right:18px;bottom:18px;z-index:30;background:var(--ok);color:#fff;border-radius:999px;padding:15px 20px;font-weight:900;box-shadow:0 14px 34px rgba(34,197,94,.4)}
+.cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:80;background:#fff;border:1px solid var(--l);border-radius:20px;padding:18px;display:none;max-width:900px;margin:auto;box-shadow:0 20px 50px rgba(7,20,33,.18)}
+.cookie.show{display:block}
+.cookie p{margin:8px 0;color:#334155}
+.cookie small{display:block;color:var(--m);margin-top:6px}
+
+/* ===== Fotos ===== */
+.hero-photo{width:100%;height:auto;border-radius:16px}
+.photo-card{background:#fff;border:1px solid var(--l);border-radius:var(--r);overflow:hidden}
+.photo-card img{width:100%;height:auto}
+.photo-card .caption{padding:14px 18px;color:var(--m);font-size:13.5px}
+.dark .photo-card{border-color:rgba(255,255,255,.14)}
+.wide-photo{margin-top:34px}
+.ansprech-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.card.has-img{padding-top:0;overflow:hidden}
+.card-img{margin:0 -26px 18px;height:140px;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease}
+.card:hover .card-img img{transform:scale(1.05)}
+.card.has-img .icon{position:relative;margin-top:-23px;border:3px solid #fff;box-shadow:0 8px 18px rgba(7,20,33,.18)}
+@media (prefers-reduced-motion:reduce){.card-img img{transition:none}.card:hover .card-img img{transform:none}}
+
+/* ===== Animation ===== */
+.flow-dot{animation:flow 3.2s linear infinite}
+.flow-dot.d2{animation-delay:1.1s}
+.flow-dot.d3{animation-delay:2.2s}
+@keyframes flow{0%{offset-distance:0%;opacity:0}12%{opacity:1}88%{opacity:1}100%{offset-distance:100%;opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .flow-dot{animation:none;opacity:0}
+  .btn,.card,.more{transition:none}
+}
+
+/* ===== Responsive ===== */
+@media(max-width:980px){
+  .links a:not(.gold):not(.ghost){display:none}
+  .links .ghost{display:none}
+  .links .gold{max-width:170px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{display:none}
+  .hero-grid,.grid2,.faq,.footgrid{grid-template-columns:1fr}
+  .cards,.more-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .logos{grid-template-columns:repeat(2,1fr)}
+  .section{padding:60px 0}
+  .hero .wrap{padding:44px 0 56px}
+  .cta{padding:34px 24px}
+  .sticky{left:16px;right:16px;text-align:center}
+  .panel-stats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+  .steps{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="https://www.s-p.solar/" aria-label="Zur Startseite von S&P Solar">
+      <img class="brand-mark" src="../bilder/logo.png" alt="S&P Solar Logo" width="46" height="46">
+      <span>S&P SOLAR</span>
+    </a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <a href="https://www.s-p.solar/#leistungen">Leistungen</a>
+      <a href="https://www.s-p.solar/#projekte">Projekte</a>
+      <a href="https://www.s-p.solar/#team">Team</a>
+      <a class="btn ghost" href="https://wa.me/491738187065?text=Hallo%20S%26P%20Solar%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Wallbox-Installation%20und%20m%C3%B6chte%20gerne%20eine%20kostenlose%20Beratung%20anfragen." target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn gold" href="mailto:info@s-p.solar?subject=Beratung%20Wallbox-Installation&body=Hallo%20S%26P%20Solar%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20Wallbox-Installation%20und%20m%C3%B6chte%20gerne%20eine%20kostenlose%20Beratung%20anfragen.%0A%0AMeine%20Kontaktdaten%3A%0A%0AName%3A%0AOrt%3A%0AMontageort%20%28Garage%2FCarport%2FAu%C3%9Fenwand%29%3A%0ATelefon%3A%0A%0AViele%20Gr%C3%BC%C3%9Fe">Beratung</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Brotkrumen-Navigation">
+      <a href="https://www.s-p.solar/">Start</a> › <span>Wallbox-Installation</span>
+    </nav>
+    <div class="hero-grid">
+      <div>
+        <div class="pill"><b>Wallbox & Ladestation</b> · Baden-Baden & Mittelbaden</div>
+        <h1>Wallbox⁠-⁠Installation:<br><span>Laden Sie Ihr E⁠-⁠Auto mit eigenem Solarstrom.</span></h1>
+        <p class="lead">Schneller und sicherer laden als an jeder Steckdose: S&P Solar übernimmt Ihre Wallbox-Installation in Baden-Baden, Rastatt, Bühl und Umgebung – 11-kW-Wallbox fachgerecht montiert, beim Netzbetreiber angemeldet und auf Wunsch mit PV-Überschussladen.</p>
+        <div class="actions">
+          <a class="btn gold" href="mailto:info@s-p.solar?subject=Beratung%20Wallbox-Installation&body=Hallo%20S%26P%20Solar%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20Wallbox-Installation%20und%20m%C3%B6chte%20gerne%20eine%20kostenlose%20Beratung%20anfragen.%0A%0AMeine%20Kontaktdaten%3A%0A%0AName%3A%0AOrt%3A%0AMontageort%20%28Garage%2FCarport%2FAu%C3%9Fenwand%29%3A%0ATelefon%3A%0A%0AViele%20Gr%C3%BC%C3%9Fe">Beratung per E-Mail anfragen</a>
+          <a class="btn ghost" href="https://wa.me/491738187065?text=Hallo%20S%26P%20Solar%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Wallbox-Installation%20und%20m%C3%B6chte%20gerne%20eine%20kostenlose%20Beratung%20anfragen." target="_blank" rel="noopener">WhatsApp-Beratung anfragen</a>
+        </div>
+        <div class="chips">
+          <span class="chip"><b>5,0 ★</b> Kunden aus der Region</span>
+          <span class="chip">Installation <b>oft an 1 Tag</b></span>
+          <span class="chip">Netzbetreiber-Anmeldung inklusive</span>
+        </div>
+      </div>
+      <figure class="hero-panel">
+        <img class="hero-photo" src="../bilder/elektrik-zaehlerschrank.jpg" alt="Zählerschrank nach fachgerechter Elektroinstallation durch S&P Solar" width="1200" height="900">
+        <div class="panel-stats">
+          <div class="panel-stat"><b>11 kW</b> empfohlener Standard</div>
+          <div class="panel-stat"><b>rund 5×</b> schneller als Haushaltssteckdose*</div>
+        </div>
+        <figcaption>Saubere Elektrik: Vorbereitung für Netzbetreiber und Betrieb. · *Richtwert: 11 kW gegenüber ca. 2,3 kW Haushaltssteckdose</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WARUM VOM FACHBETRIEB ===== -->
+<section class="section">
+  <div class="wrap grid2">
+    <div>
+      <div class="eyebrow">Warum vom Fachbetrieb?</div>
+      <h2>Eine Wallbox ist kein Zubehör. Sie ist ein Stück Elektroinstallation.</h2>
+      <p>Die Haushaltssteckdose ist fürs regelmäßige Laden eines E-Autos nicht gemacht: Stundenlanger Betrieb unter Volllast kann Leitung und Steckdose überhitzen. Eine Wallbox gehört deshalb an einen eigenen, abgesicherten Stromkreis – geplant und installiert vom Elektro-Fachbetrieb. Dazu kommt der Papierkram: 11-kW-Wallboxen sind beim Netzbetreiber meldepflichtig, 22-kW-Wallboxen sogar genehmigungspflichtig (§ 19 NAV). Beides übernehmen wir für Sie.</p>
+      <ul class="check">
+        <li>Eigener Stromkreis mit passender Absicherung und FI-Schutz</li>
+        <li>Deutlich schnelleres und sichereres Laden als an der Haushaltssteckdose</li>
+        <li>Anmeldung bzw. Genehmigung beim Netzbetreiber inklusive</li>
+        <li>Auf Wunsch mit PV-Überschussladen – <a href="../photovoltaik-mit-speicher/" style="text-decoration:underline">mehr zu Photovoltaik mit Speicher</a></li>
+      </ul>
+      <a class="btn darkbtn" href="mailto:info@s-p.solar?subject=Beratung%20Wallbox-Installation&body=Hallo%20S%26P%20Solar%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20Wallbox-Installation%20und%20m%C3%B6chte%20gerne%20eine%20kostenlose%20Beratung%20anfragen.%0A%0AMeine%20Kontaktdaten%3A%0A%0AName%3A%0AOrt%3A%0AMontageort%20%28Garage%2FCarport%2FAu%C3%9Fenwand%29%3A%0ATelefon%3A%0A%0AViele%20Gr%C3%BC%C3%9Fe">Beratung starten</a>
+    </div>
+    <div class="usage">
+      <h3>Ladezeit im Vergleich</h3>
+      <small>Beispiel: E-Auto mit 60-kWh-Batterie, von leer auf voll*</small>
+      <div class="usage-row">
+        <div class="label"><span>Haushaltssteckdose (~2,3 kW)</span><b>~26 Std.</b></div>
+        <div class="bar"><i style="width:100%"></i></div>
+      </div>
+      <div class="usage-row">
+        <div class="label"><span>Wallbox 11 kW</span><b>~5,5 Std.</b></div>
+        <div class="bar"><i style="width:22%"></i></div>
+      </div>
+      <div class="usage-row">
+        <div class="label"><span>Wallbox 22 kW**</span><b>~3 Std.</b></div>
+        <div class="bar"><i style="width:12%"></i></div>
+      </div>
+      <p class="usage-note">*Richtwerte (Stand 2026), tatsächliche Ladezeit abhängig von Fahrzeug und Ladeverhalten. **Nicht jedes E-Auto lädt an Wechselstrom (AC) mit 22 kW – viele Modelle sind auf 11 kW begrenzt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEISTUNGSUMFANG / LÖSUNGEN ===== -->
+<section class="section soft">
+  <div class="wrap">
+    <div class="eyebrow">Leistungsumfang</div>
+    <h2>Wallbox-Lösungen: vom Vor-Ort-Check bis zur ersten Ladung.</h2>
+    <p style="max-width:720px">Sie bekommen bei S&P Solar keine Wallbox aus dem Karton, sondern eine fertig installierte Ladelösung. Eduard Schartner berät Sie persönlich – vom ersten Check bis zur Freigabe durch den Netzbetreiber.</p>
+    <div class="cards" style="margin-top:34px">
+      <article class="card has-img">
+        <div class="card-img"><img src="../bilder/anlage-offenburg.jpg" alt="Wohnhaus mit Photovoltaikanlage in Offenburg" loading="lazy" width="1200" height="900"></div>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#172033" stroke-width="2" stroke-linecap="round"><rect x="7" y="3" width="10" height="14" rx="2"/><path d="M13 6l-3 4h4l-3 4"/><path d="M12 17v4M9 21h6"/></svg></div>
+        <h3>11-kW-Wallbox fürs Eigenheim</h3>
+        <p>Der Alltags-Standard: 11 kW laden jedes E-Auto über Nacht voll – zuverlässig, sicher und ohne Genehmigungsaufwand beim Netzbetreiber.</p>
+      </article>
+      <article class="card has-img">
+        <div class="card-img"><img src="../bilder/premium-module.jpg" alt="Schwarze Solarmodule liefern Strom fürs E-Auto" loading="lazy" width="1200" height="907"></div>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#172033" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></div>
+        <h3>PV-Überschussladen</h3>
+        <p>Sonne tanken statt Netzstrom kaufen: Mit Energiemanagement lädt die Wallbox bevorzugt, wenn Ihre PV-Anlage Überschuss liefert – ideal kombiniert mit <a href="../photovoltaik-mit-speicher/" style="text-decoration:underline">Photovoltaik mit Speicher</a>.</p>
+      </article>
+      <article class="card has-img">
+        <div class="card-img"><img src="../bilder/fahrzeug.jpg" alt="S&P Solar Betriebsfahrzeug beim Vor-Ort-Termin" loading="lazy" width="1200" height="668"></div>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#172033" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M15.5 15.5L21 21"/></svg></div>
+        <h3>Vor-Ort-Check</h3>
+        <p>Vor dem Angebot prüfen wir Zählerschrank, Leitungsweg und Wunsch-Montageort – damit der Preis hält und die Installation ohne Überraschungen läuft.</p>
+      </article>
+      <article class="card has-img">
+        <div class="card-img"><img src="../bilder/elektrik-zaehlerschrank.jpg" alt="Zählerschrank nach fachgerechter Elektroinstallation" loading="lazy" width="1200" height="900"></div>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#172033" stroke-width="2" stroke-linecap="round"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Saubere Elektroinstallation</h3>
+        <p>Eigener, abgesicherter Stromkreis mit FI-Schutz, ordentliche Kabelwege und geprüfte Anschlüsse – so, wie es Norm und Sicherheit verlangen.</p>
+      </article>
+      <article class="card has-img">
+        <div class="card-img"><img src="../bilder/team-einsatz.jpg" alt="Das Team von S&P Solar" loading="lazy" width="1200" height="668" style="object-position:50% 30%"></div>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#172033" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-5"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Anmeldung beim Netzbetreiber</h3>
+        <p>11 kW melden, 22 kW genehmigen lassen: Wir erledigen die Formalitäten mit dem Netzbetreiber, bevor Ihre Wallbox ans Netz geht.</p>
+      </article>
+      <article class="card has-img">
+        <div class="card-img"><img src="../bilder/anlage-vogelperspektive.jpg" alt="Gebäude mit PV-Anlage aus der Vogelperspektive" loading="lazy" width="1200" height="864"></div>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#172033" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M5 21V5l7-2v18M12 21h7V9l-7-2"/><path d="M8 8h1M8 12h1M8 16h1"/></svg></div>
+        <h3>Wallbox für Gewerbe & Fuhrpark</h3>
+        <p>Ladepunkte für Mitarbeiter- und Firmenfahrzeuge, auf Wunsch kombiniert mit <a href="../photovoltaik-gewerbe/" style="text-decoration:underline">Photovoltaik für Gewerbe</a> auf dem Firmendach.</p>
+      </article>
+    </div>
+    <div class="table-card" style="margin-top:40px">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">Im Vergleich</th><th scope="col">Wallbox 11 kW</th><th scope="col">Wallbox 22 kW</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>Ladeleistung</b></td><td>11 kW (dreiphasig)</td><td>22 kW (dreiphasig)</td></tr>
+            <tr><td><b>Reichweite pro Ladestunde*</b></td><td>ca. 50–70 km</td><td>ca. 100–140 km – wenn das Fahrzeug es kann</td></tr>
+            <tr><td><b>Netzbetreiber</b></td><td>meldepflichtig – erledigen wir</td><td>genehmigungspflichtig (§ 19 NAV) – beantragen wir</td></tr>
+            <tr><td><b>Für wen geeignet</b></td><td><b>Der Alltags-Standard:</b> über Nacht ist jedes E-Auto voll</td><td>Sonderfälle: mehrere Fahrzeuge, kurze Standzeiten</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-foot">*Richtwerte (Stand 2026), abhängig von Fahrzeug und Verbrauch. Viele E-Autos laden an Wechselstrom (AC) maximal mit 11 kW – 22 kW bringen dann keinen Vorteil.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KOSTEN ===== -->
+<section class="section" id="kosten">
+  <div class="wrap">
+    <div class="eyebrow">Kosten</div>
+    <h2>Was kostet eine Wallbox-Installation?</h2>
+    <p style="max-width:760px">Ehrliche Antwort: Der Löwenanteil ist selten das Gerät, sondern die fachgerechte Installation – und die hängt vom Leitungsweg und Ihrem Zählerschrank ab. Hier marktübliche Richtwerte (Stand 2026, inkl. MwSt.) – Ihren verbindlichen Preis erhalten Sie nach dem kostenlosen Vor-Ort-Check.</p>
+    <div class="table-card" style="margin-top:30px">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">Position</th><th scope="col">Was ist enthalten</th><th scope="col">Richtwert*</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>Wallbox-Gerät (11 kW)</b></td><td>Ladestation je nach Ausstattung, z. B. mit Anbindung ans Energiemanagement</td><td class="price">ca. 400–1.200 €</td></tr>
+            <tr><td><b>Installation & Material</b></td><td>Eigener Stromkreis, Absicherung, FI-Schutz, Leitungsweg, Inbetriebnahme – je nach Leitungsweg & Zählerschrank</td><td class="price">ca. 800–2.000 €</td></tr>
+            <tr><td><b>Gesamt typisch</b></td><td>Komplett montiert, geprüft und beim Netzbetreiber angemeldet</td><td class="price">ca. 1.500–3.000 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-foot">*Richtwerte inkl. MwSt. (Stand 2026). Der tatsächliche Preis hängt vor allem von Leitungsweg und Zählerschrank ab – verbindlich wird er nach dem kostenlosen Vor-Ort-Check.</div>
+    </div>
+    <div class="notice">
+      <div class="n-icon">PV</div>
+      <p><b>Tipp:</b> Planen Sie die Wallbox gleich mit der PV-Anlage – ein Termin, ein Ansprechpartner und Technik, die aufeinander abgestimmt ist. So lädt Ihr E-Auto vom ersten Tag an mit eigenem Sonnenstrom.</p>
+    </div>
+    <div class="stats" style="margin-top:34px">
+      <div class="stat"><b>½–1 Tag</b><small>typische Installationsdauer</small></div>
+      <div class="stat"><b>11 kW</b><small>der Standard für den Alltag</small></div>
+      <div class="stat"><b>1</b><small>eigener, abgesicherter Stromkreis</small></div>
+      <div class="stat"><b>inklusive</b><small>Anmeldung beim Netzbetreiber</small></div>
+    </div>
+    <p style="font-size:13px;color:var(--m);margin-top:14px">Richtwerte (Stand 2026), abhängig von Leitungsweg, Zählerschrank und Gerätewahl. Fragen zur steuerlichen Behandlung klären Sie bitte mit Ihrem Steuerberater.</p>
+  </div>
+</section>
+
+<!-- ===== SO FUNKTIONIERT ES / ABLAUF ===== -->
+<section class="section dark">
+  <div class="wrap">
+    <div class="eyebrow">Ablauf</div>
+    <h2>Von der Anfrage bis zur ersten Ladung.</h2>
+    <p style="max-width:700px">Klar strukturiert und ohne Umwege – so läuft Ihre Wallbox-Installation mit S&P Solar ab:</p>
+    <div class="steps" style="margin-top:34px">
+      <div class="step"><b>1</b><h3>Anfrage</h3><p>Sie schreiben uns per E-Mail oder WhatsApp.</p></div>
+      <div class="step"><b>2</b><h3>Vor-Ort-Check</h3><p>Wir prüfen Zählerschrank, Leitungsweg und Wunsch-Montageort.</p></div>
+      <div class="step"><b>3</b><h3>Angebot</h3><p>Sie erhalten ein klares Angebot mit Gerät und Installation.</p></div>
+      <div class="step"><b>4</b><h3>Installation</h3><p>Oft an einem Tag: Stromkreis, Montage, Inbetriebnahme.</p></div>
+      <div class="step"><b>5</b><h3>Anmeldung</h3><p>Wir melden die Wallbox beim Netzbetreiber an.</p></div>
+      <div class="step"><b>6</b><h3>Laden</h3><p>Sie laden bequem zu Hause – auf Wunsch mit Solarstrom.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MARKEN ===== -->
+<section class="section soft">
+  <div class="wrap">
+    <div class="eyebrow">Markenqualität</div>
+    <h2>Komponenten, auf die wir uns verlassen.</h2>
+    <p style="max-width:720px">Wir setzen auf Marken, die im Alltag überzeugen und langfristig halten – bei Modulen, Wechselrichtern und Speichern genauso wie beim Energiemanagement rund um Ihre Wallbox.</p>
+    <div class="logo-slider" aria-label="Marken, die S&P Solar verbaut"><div class="logo-track"><div class="logo-box">AIKO</div><div class="logo-box">Bauer</div><div class="logo-box">EcoFlow</div><div class="logo-box">Sigenergy</div><div class="logo-box">SMA</div><div class="logo-box">BYD</div><div class="logo-box" aria-hidden="true">AIKO</div><div class="logo-box" aria-hidden="true">Bauer</div><div class="logo-box" aria-hidden="true">EcoFlow</div><div class="logo-box" aria-hidden="true">Sigenergy</div><div class="logo-box" aria-hidden="true">SMA</div><div class="logo-box" aria-hidden="true">BYD</div></div></div>
+  </div>
+</section>
+
+<!-- ===== REGION ===== -->
+<section class="section">
+  <div class="wrap grid2">
+    <div>
+      <div class="eyebrow">Regional verwurzelt</div>
+      <h2>Ihr Wallbox-Fachbetrieb für Baden-Baden, Rastatt & Bühl.</h2>
+      <p>S&P Solar sitzt in Baden-Baden und ist in ganz Mittelbaden unterwegs. Für Ihre Wallbox heißt das: kurze Wege zum Vor-Ort-Check, ein Ansprechpartner vor Ort und ein Team, das die Netzbetreiber der Region kennt. Ob Garage, Carport oder Außenwand – wir installieren bei Ihnen in Baden-Baden, Rastatt, Bühl und Umgebung. Einblicke in umgesetzte Projekte finden Sie in unseren <a href="https://www.s-p.solar/#projekte" style="text-decoration:underline">Projektbeispielen</a>.</p>
+      <div class="region-chips">
+        <span class="region-chip">Baden-Baden</span>
+        <span class="region-chip">Rastatt</span>
+        <span class="region-chip">Bühl</span>
+        <span class="region-chip">Gaggenau</span>
+        <span class="region-chip">Gernsbach</span>
+        <span class="region-chip">Offenburg</span>
+      </div>
+    </div>
+    <div class="photo-card">
+      <img src="../bilder/fahrzeug.jpg" alt="S&P Solar Betriebsfahrzeug mit Mitarbeiter in Baden-Baden" width="1200" height="668" loading="lazy">
+      <div class="caption">S&P Solar ist regional unterwegs für Photovoltaik, Stromspeicher und Wallboxen.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ANSPRECHPARTNER ===== -->
+<section class="section dark">
+  <div class="wrap">
+    <div class="grid2">
+      <div class="ansprech-duo">
+        <div class="photo-card">
+          <img src="../bilder/eduard-schartner.jpg" alt="Eduard Schartner, Ansprechpartner für Beratung und Angebot bei S&P Solar" width="800" height="800" loading="lazy">
+          <div class="caption"><b>Eduard Schartner</b> · Beratung, Angebot & Projektabstimmung</div>
+        </div>
+        <div class="photo-card">
+          <img src="../bilder/artur-schartner.jpg" alt="Artur Schartner, Inhaber von S&P Solar – Organisation und Verwaltung" width="800" height="800" loading="lazy">
+          <div class="caption"><b>Artur Schartner</b> · Inhaber · Organisation & Verwaltung</div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Persönlich statt Hotline</div>
+        <h2>Ihre Ansprechpartner: Eduard & Artur Schartner.</h2>
+        <p>Ob Garage, Carport oder Außenwand: Eduard Schartner klärt mit Ihnen Montageort und Leitungsweg, erstellt Ihr Angebot und begleitet die Wallbox-Installation bis zum ersten Ladevorgang.</p>
+        <p>Artur Schartner, Inhaber von S&P Solar, hält Organisation und Abwicklung zusammen – so läuft Ihr Projekt vom Angebot bis zur Anmeldung reibungslos.</p>
+        <div class="actions">
+          <a class="btn gold" href="mailto:info@s-p.solar?subject=Beratung%20Wallbox-Installation&body=Hallo%20S%26P%20Solar%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20Wallbox-Installation%20und%20m%C3%B6chte%20gerne%20eine%20kostenlose%20Beratung%20anfragen.%0A%0AMeine%20Kontaktdaten%3A%0A%0AName%3A%0AOrt%3A%0AMontageort%20%28Garage%2FCarport%2FAu%C3%9Fenwand%29%3A%0ATelefon%3A%0A%0AViele%20Gr%C3%BC%C3%9Fe">Beratung per E-Mail</a>
+          <a class="btn ghost" href="https://wa.me/491738187065?text=Hallo%20S%26P%20Solar%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Wallbox-Installation%20und%20m%C3%B6chte%20gerne%20eine%20kostenlose%20Beratung%20anfragen." target="_blank" rel="noopener">WhatsApp-Beratung</a>
+        </div>
+      </div>
+    </div>
+    <div class="photo-card wide-photo">
+      <img src="../bilder/team-einsatz.jpg" alt="Das Team von S&P Solar" width="1200" height="668" loading="lazy">
+      <div class="caption">Das Team von S&P Solar – im Einsatz in Baden-Baden und Umgebung.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section soft" id="faq">
+  <div class="wrap">
+    <div class="eyebrow">Häufige Fragen</div>
+    <h2>Wallbox-Installation: Ihre Fragen, klar beantwortet.</h2>
+    <div class="faq" style="margin-top:34px">
+      <details>
+        <summary>Was kostet die Wallbox-Installation?</summary>
+        <p>Als Richtwert (Stand 2026, inkl. MwSt.): Das 11-kW-Wallbox-Gerät kostet ca. 400–1.200 €, die Installation inklusive Material je nach Leitungsweg und Zählerschrank ca. 800–2.000 €. Komplett liegen die meisten Projekte bei ca. 1.500–3.000 € inklusive Anmeldung beim Netzbetreiber. Den verbindlichen Preis nennen wir Ihnen nach dem kostenlosen Vor-Ort-Check.</p>
+      </details>
+      <details>
+        <summary>11 oder 22 kW – was ist sinnvoll?</summary>
+        <p>Für Zuhause sind 11 kW fast immer die richtige Wahl: Über Nacht ist jedes E-Auto voll, die Wallbox ist nur meldepflichtig und viele Fahrzeuge laden an Wechselstrom ohnehin nicht schneller. 22 kW lohnen sich nur in Sonderfällen – etwa wenn mehrere Fahrzeuge in kurzer Zeit laden müssen – und brauchen eine Genehmigung des Netzbetreibers.</p>
+      </details>
+      <details>
+        <summary>Muss die Wallbox angemeldet werden?</summary>
+        <p>Ja. Eine 11-kW-Wallbox muss beim Netzbetreiber angemeldet werden, eine 22-kW-Wallbox braucht sogar eine Genehmigung (§ 19 NAV). Beides übernehmen wir für Sie – die Anmeldung gehört bei uns zum Installationspaket.</p>
+      </details>
+      <details>
+        <summary>Kann ich mit meinem PV-Strom laden?</summary>
+        <p>Ja. Mit PV-Überschussladen lädt die Wallbox bevorzugt dann, wenn Ihre Photovoltaikanlage mehr Strom erzeugt, als das Haus gerade verbraucht. Dafür koppeln wir Wallbox und PV-Anlage über ein Energiemanagement – am besten in Kombination mit einem Stromspeicher. So fahren Sie einen großen Teil Ihrer Kilometer mit eigenem Sonnenstrom.</p>
+      </details>
+      <details>
+        <summary>Gibt es Förderung für die Wallbox?</summary>
+        <p>Die bundesweiten KfW-Programme für private Wallboxen sind ausgelaufen (Stand 2026). Ob es aktuell regionale Programme oder Zuschüsse gibt, prüfen wir gerne im Rahmen Ihres Projekts – sprechen Sie uns in der Beratung einfach darauf an.</p>
+      </details>
+      <details>
+        <summary>Funktioniert eine Wallbox auch ohne PV-Anlage?</summary>
+        <p>Ja, selbstverständlich. Die Wallbox lädt dann mit Netzstrom – deutlich schneller und sicherer als jede Haushaltssteckdose. Eine PV-Anlage lässt sich später jederzeit ergänzen; die Wallbox binden wir dann ins Energiemanagement ein.</p>
+      </details>
+      <details>
+        <summary>Wie lange dauert die Installation?</summary>
+        <p>In den meisten Fällen ist die Wallbox an einem halben bis ganzen Tag installiert – inklusive eigenem Stromkreis und Absicherung. Bei längeren Leitungswegen oder wenn der Zählerschrank angepasst werden muss, kann es etwas mehr sein. Nach dem Vor-Ort-Check nennen wir Ihnen den konkreten Aufwand.</p>
+      </details>
+      <details>
+        <summary>Welche Wallbox bekomme ich?</summary>
+        <p>Wir sind markenoffen und wählen das Gerät passend zu Ihrem Fahrzeug, Ihrer Elektroinstallation und – falls vorhanden oder geplant – Ihrem PV-System aus. Wichtig ist, dass Wallbox, Energiemanagement und Speicher sauber zusammenspielen. Sie bekommen eine Empfehlung mit Begründung, keine Katalogseite.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="cta">
+      <div class="eyebrow">Jetzt unverbindlich anfragen</div>
+      <h2>Holen Sie sich die Ladestation nach Hause.</h2>
+      <p style="max-width:640px">Schreiben Sie uns kurz per E-Mail oder WhatsApp – mit Ihrem Ort und dem gewünschten Montageort (Garage, Carport oder Außenwand). Eduard Schartner meldet sich persönlich mit einer ersten ehrlichen Einschätzung zurück.</p>
+      <div class="actions">
+        <a class="btn gold" href="mailto:info@s-p.solar?subject=Beratung%20Wallbox-Installation&body=Hallo%20S%26P%20Solar%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20Wallbox-Installation%20und%20m%C3%B6chte%20gerne%20eine%20kostenlose%20Beratung%20anfragen.%0A%0AMeine%20Kontaktdaten%3A%0A%0AName%3A%0AOrt%3A%0AMontageort%20%28Garage%2FCarport%2FAu%C3%9Fenwand%29%3A%0ATelefon%3A%0A%0AViele%20Gr%C3%BC%C3%9Fe">Beratung per E-Mail</a>
+        <a class="btn ghost" href="https://wa.me/491738187065?text=Hallo%20S%26P%20Solar%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Wallbox-Installation%20und%20m%C3%B6chte%20gerne%20eine%20kostenlose%20Beratung%20anfragen." target="_blank" rel="noopener">WhatsApp-Beratung</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WEITERE LEISTUNGEN ===== -->
+<section class="section soft">
+  <div class="wrap">
+    <div class="eyebrow">Weitere Leistungen</div>
+    <h2>Das könnte Sie auch interessieren.</h2>
+    <div class="more-grid" style="margin-top:34px">
+      <a class="more" href="../photovoltaik-mit-speicher/">
+        <h3>Photovoltaik mit Speicher</h3>
+        <p>Die perfekte Basis fürs Solarladen: Komplettanlage mit Stromspeicher – schlüsselfertig inklusive Anmeldung.</p>
+        <span class="arrow">Mehr erfahren →</span>
+      </a>
+      <a class="more" href="../stromspeicher-nachruesten/">
+        <h3>Stromspeicher nachrüsten</h3>
+        <p>Sie haben schon eine PV-Anlage? So rüsten Sie einen Batteriespeicher nach oder erweitern Ihre Kapazität.</p>
+        <span class="arrow">Mehr erfahren →</span>
+      </a>
+      <a class="more" href="../photovoltaik-gewerbe/">
+        <h3>Photovoltaik für Gewerbe</h3>
+        <p>PV-Lösungen für Unternehmen: Flachdach, Hallendach oder Carport – mit starker Wirtschaftlichkeit.</p>
+        <span class="arrow">Mehr erfahren →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <b>S&P Solar</b>
+        <p>Photovoltaik, Speicher, Wallbox, Balkonkraftwerke, Batterieerweiterung und Nachrüstung aus Baden-Baden.</p>
+      </div>
+      <div>
+        <b>Leistungen</b>
+        <p>
+          <a href="../photovoltaik-mit-speicher/">Photovoltaik mit Speicher</a><br>
+          <a href="../stromspeicher-nachruesten/">Stromspeicher nachrüsten</a><br>
+          <a href="../wallbox/">Wallbox-Installation</a><br>
+          <a href="../photovoltaik-gewerbe/">Photovoltaik für Gewerbe</a>
+        </p>
+      </div>
+      <div>
+        <b>Kontakt</b>
+        <p>
+          <a href="tel:+491738187065">+49 173 8187065</a><br>
+          <a href="mailto:info@s-p.solar">info@s-p.solar</a><br>
+          <a href="https://www.s-p.solar/#impressum">Impressum</a> · <a href="https://www.s-p.solar/#datenschutz">Datenschutz</a><br>
+          <button onclick="resetCookie()" style="background:transparent;color:#cbd5e1;border:0;padding:0;text-decoration:underline;cursor:pointer;font:inherit">Cookie-Einstellungen</button>
+        </p>
+      </div>
+    </div>
+    <div class="credit">
+      <span>Region: Baden-Baden · Rastatt · Bühl · Gaggenau · Gernsbach · Offenburg</span>
+      <span>Website by <a href="https://rexfortis.de" target="_blank" rel="noopener">Rex Fortis</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="sticky" href="https://wa.me/491738187065?text=Hallo%20S%26P%20Solar%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Wallbox-Installation%20und%20m%C3%B6chte%20gerne%20eine%20kostenlose%20Beratung%20anfragen." target="_blank" rel="noopener">WhatsApp-Beratung anfragen</a>
+
+<div id="cookie" class="cookie">
+  <b>Datenschutz-Einstellungen</b>
+  <p>Wir verwenden notwendige Technik für den Betrieb der Website. Optionale Statistik-/Tracking-Dienste werden erst nach Ihrer Zustimmung aktiviert.</p>
+  <small>Sie können die Website auch ohne Statistik-Tracking nutzen.</small>
+  <div class="actions">
+    <button class="btn darkbtn" onclick="saveCookie('necessary')">Nur notwendige akzeptieren</button>
+    <button class="btn gold" onclick="saveCookie('stats')">Statistik akzeptieren</button>
+    <a class="btn darkbtn" href="https://www.s-p.solar/#datenschutz">Datenschutz lesen</a>
+  </div>
+</div>
+
+<script>
+function saveCookie(v){localStorage.setItem('sp_cookie_consent_v8',v);document.getElementById('cookie').classList.remove('show')}
+function resetCookie(){localStorage.removeItem('sp_cookie_consent_v8');document.getElementById('cookie').classList.add('show')}
+if(!localStorage.getItem('sp_cookie_consent_v8'))document.getElementById('cookie').classList.add('show');
+</script>
+
+</body>
+</html>

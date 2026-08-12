@@ -1,0 +1,23 @@
+# robots.txt – S&P Solar (www.s-p.solar)
+# Alle Crawler willkommen, inkl. KI-Suchsysteme.
+
+User-agent: *
+Allow: /
+
+# KI-Crawler ausdrücklich erlaubt
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.s-p.solar/sitemap.xml
